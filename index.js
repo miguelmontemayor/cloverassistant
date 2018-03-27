@@ -3,9 +3,9 @@ require('dotenv').config();
 
 const https = require('https');
 const host = 'apisandbox.dev.clover.com';
-const accessToken = 'd2c504dc-2d28-6095-600e-1c2fb7c86f16'
-const merchantId = 'TB6EGCJW1K3EW'
-const merchantName = 'Miguel\'s Snack Shack'
+const accessToken = process.env.CLOVERAPIKEY
+const merchantId = process.env.MERCHANTID
+const merchantName = process.env.MERCHANTNAME //You can access this progrmatically as well
 
 const functions = require('firebase-functions'); // Cloud Functions for Firebase library
 
@@ -210,5 +210,3 @@ function getAcknowledgement(){
       return 'Sure';
   }
 }
-
-//gcloud beta functions deploy cloverAssistantWebhook --stage-bucket clover-8df03.appspot.com --trigger-http
